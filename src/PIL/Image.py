@@ -1049,7 +1049,7 @@ class Image(object):
                 new_im.info['transparency'] = trns
         return new_im
 
-    def quantize(self, colors=256, method=None, dither=1, kmeans=0, palette=None):
+    def quantize(self, colors=256, method=None, kmeans=0, palette=None, dither=1):
         """
         Convert the image to 'P' mode with the specified number
         of colors.
@@ -1059,13 +1059,13 @@ class Image(object):
                        1 = maximum coverage
                        2 = fast octree
                        3 = libimagequant
+        :param kmeans: Integer
+        :param palette: Quantize to the palette of given
+                        :py:class:`PIL.Image.Image`.
         :param dither: Dithering method, used when converting from
            mode "RGB" to "P" or from "RGB" or "L" to "1".
            Available methods are NONE or FLOYDSTEINBERG (default).
            Default: 1 (legacy setting)
-        :param kmeans: Integer
-        :param palette: Quantize to the palette of given
-                        :py:class:`PIL.Image.Image`.
         :returns: A new image
 
         """
