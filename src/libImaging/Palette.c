@@ -44,7 +44,7 @@ ImagingPaletteNew(const char* mode)
     for (i = 0; i < 256; i++) {
         palette->palette[i*4+0] =
         palette->palette[i*4+1] =
-        palette->palette[i*4+2] = (UINT8) i;
+        palette->palette[i*4+2] = 0;
         palette->palette[i*4+3] = 255; /* opaque */
     }
 
